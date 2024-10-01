@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit{
     console.log('object :>> ', counter.increment());
     console.log("Ng On Init");
     this.printPyramid(6);
+
   }
 
 
@@ -37,9 +38,15 @@ export class HomeComponent implements OnInit{
     spreadOperation=()=>{
       const arr1=[1,2,3,4,5]
       const arr2=[6,7,8,9,10];
+
+      let obj1 = {x:3,y:4,z:5}
+      let obj2 = {f:6,y:7,z:8}
+      let combinedObj= {...obj1,...obj2}
       let combinedArray = [...arr1,{a:4,b:6}];
 
-      console.log('Spread Operator Array :>> ', combinedArray);
+      // console.log('Spread Operator Array :>> ', combinedArray);
+
+      console.log('Spread Operator Obje :>> ', combinedObj);
     }
 
     /// pring pyramid
@@ -64,6 +71,12 @@ export class HomeComponent implements OnInit{
        }
         
     }
+
+    // find missing number in Array
+
+    findMissingNumber =(array:any)=>[
+
+    ]
    
 
   }
