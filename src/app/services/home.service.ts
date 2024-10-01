@@ -2,14 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class HomeService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http:HttpClient) { }
-
-
-  getData=()=>{
-return this.http.get('https://jsonplaceholder.typicode.com/posts');
-  }
+  getData = () => {
+    return this.http.get('https://jsonplaceholder.typicode.com/posts');
+  };
 }
