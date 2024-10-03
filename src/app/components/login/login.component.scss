@@ -1,13 +1,33 @@
 :host .login-component{
-
+border: 5px solid;
     position: relative;
     top: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    .userid{
+    .textbox-container{
+        margin: 10px 0;
+    }
+    .userid,.password{
         height: 30px;
         border: 1px solid #ccc;
         border-radius: 3px;
     }
+    .button-container{
+        .submit-button{
+            height: 50px;
+            width: 100%;
+            background-color: rgb(175, 135, 135)
+        }
+    }
+}
+
+//medi query
+
+@media screen and (max-width : 480px){
+    .login-component{
+        background-color: red;
+        border: 50px solid;
+    }
+   
 }
