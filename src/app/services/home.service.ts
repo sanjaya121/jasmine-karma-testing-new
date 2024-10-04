@@ -10,4 +10,9 @@ export class HomeService {
   getData = () => {
     return this.http.get('https://jsonplaceholder.typicode.com/posts');
   };
+
+
+  routeGuard=():boolean =>{
+    return true;
+  }
 }
