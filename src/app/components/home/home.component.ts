@@ -1,11 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeService } from 'src/app/services/home-services/home.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit{
+export class HomeComponent implements OnInit {
+  /**
+   *
+   */
+  constructor(private homeService: HomeService) {}
+  posts: any;
 
   ngOnInit(): void {
     // const counter =this.createClosure();
@@ -13,71 +19,75 @@ export class HomeComponent implements OnInit{
     // console.log('object :>> ', counter.increment());
     // console.log("Ng On Init");
     // this.printPyramid(6);
-
+    this.getPosts();
   }
 
+  getPosts = () => {
+    this.homeService.getData().subscribe((posts) => {
+    
+      this.posts = posts;
+      console.log('all posts', this.posts);
+    });
 
-  // // closure example
+    // // closure example
 
-  // createClosure=()=>{
-  //   let count =0;
-  //   return {
-  //     increment : ()=>{
-  //       count ++;
-  //       return count;
-      
-  //     },
-  //     decrement: ()=>{
-  //       count --;
-  //       return count;
-  //     }
-  //   }
-  //   }
+    // createClosure=()=>{
+    //   let count =0;
+    //   return {
+    //     increment : ()=>{
+    //       count ++;
+    //       return count;
 
-  //   /// understanding Spread operator.
-  //   spreadOperation=()=>{
-  //     const arr1=[1,2,3,4,5]
-  //     const arr2=[6,7,8,9,10];
+    //     },
+    //     decrement: ()=>{
+    //       count --;
+    //       return count;
+    //     }
+    //   }
+    //   }
 
-  //     let obj1 = {x:3,y:4,z:5}
-  //     let obj2 = {f:6,y:7,z:8}
-  //     let combinedObj= {...obj1,...obj2}
-  //     let combinedArray = [...arr1,{a:4,b:6}];
+    //   /// understanding Spread operator.
+    //   spreadOperation=()=>{
+    //     const arr1=[1,2,3,4,5]
+    //     const arr2=[6,7,8,9,10];
 
-  //     // console.log('Spread Operator Array :>> ', combinedArray);
+    //     let obj1 = {x:3,y:4,z:5}
+    //     let obj2 = {f:6,y:7,z:8}
+    //     let combinedObj= {...obj1,...obj2}
+    //     let combinedArray = [...arr1,{a:4,b:6}];
 
-  //     console.log('Spread Operator Obje :>> ', combinedObj);
-  //   }
+    //     // console.log('Spread Operator Array :>> ', combinedArray);
 
-  //   /// pring pyramid
+    //     console.log('Spread Operator Obje :>> ', combinedObj);
+    //   }
 
-  //     printPyramid =(rows:any)=>{
-  //       // for (let i = 0; i < rows; i++) {
-  //       //     var output = '';
-  //       //     for (let j =0; j < rows - i; j++) output += ' ';
-  //       //     for (let k = 0; k <= i; k++) output += '* ';
-  //       //     console.log(output);  
-  //       // } 
+    //   /// pring pyramid
 
-  //      for(let i=0;i < rows;i++){
-  //       var output ='';
-  //       for(let j=0;j < rows-i;j++){
-  //         output += " ";
-  //       }
-  //       for(let k=0;k < i;k++){
-  //         output += '* '
-  //       }
-  //       console.log(output);
-  //      }
-        
-  //   }
+    //     printPyramid =(rows:any)=>{
+    //       // for (let i = 0; i < rows; i++) {
+    //       //     var output = '';
+    //       //     for (let j =0; j < rows - i; j++) output += ' ';
+    //       //     for (let k = 0; k <= i; k++) output += '* ';
+    //       //     console.log(output);
+    //       // }
 
-  //   // find missing number in Array
+    //      for(let i=0;i < rows;i++){
+    //       var output ='';
+    //       for(let j=0;j < rows-i;j++){
+    //         output += " ";
+    //       }
+    //       for(let k=0;k < i;k++){
+    //         output += '* '
+    //       }
+    //       console.log(output);
+    //      }
 
-  //   findMissingNumber =(array:any)=>[
+    //   }
 
-  //   ]
-   
+    //   // find missing number in Array
 
-  }
+    //   findMissingNumber =(array:any)=>[
 
+    //   ]
+  };
+}

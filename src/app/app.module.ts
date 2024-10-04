@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { LoginChildComponent } from './components/login/login-child/login-child.component';
+import { GridLayoutDirective } from './custom-directives/grid-layout.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    LoginChildComponent
+    LoginChildComponent,
+    GridLayoutDirective
   ],
   imports: [
     BrowserModule,
