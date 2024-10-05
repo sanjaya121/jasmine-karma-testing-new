@@ -8,6 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { LoginChildComponent } from './components/login/login-child/login-child.component';
 import { GridLayoutDirective } from './custom-directives/grid-layout.directive';
+import { SamplePipe } from './custom-pipes/sample.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { GridLayoutDirective } from './custom-directives/grid-layout.directive';
     HomeComponent,
     LoginComponent,
     LoginChildComponent,
-    GridLayoutDirective
+    GridLayoutDirective,
+    SamplePipe
   ],
   imports: [
     BrowserModule,

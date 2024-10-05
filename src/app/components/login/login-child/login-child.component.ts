@@ -13,6 +13,7 @@ export class LoginChildComponent implements OnInit {
   
   ngOnInit(): void {
     console.log('inside child component', this.userId);
+    
   }
 
   ngOnChanges = () => {
