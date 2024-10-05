@@ -9,6 +9,7 @@ import { LoginComponent } from './components/login/login.component';
 import { LoginChildComponent } from './components/login/login-child/login-child.component';
 import { GridLayoutDirective } from './custom-directives/grid-layout.directive';
 import { SamplePipe } from './custom-pipes/sample.pipe';
+import { ResetPaasswordComponent } from './components/reset-paassword/reset-paassword.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SamplePipe } from './custom-pipes/sample.pipe';
     LoginComponent,
     LoginChildComponent,
     GridLayoutDirective,
-    SamplePipe
+    SamplePipe,
+    ResetPaasswordComponent
   ],
   imports: [
     BrowserModule,

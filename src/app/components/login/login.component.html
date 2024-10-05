@@ -13,10 +13,10 @@
     </div>
   </form>
 
-
+{{message}}
 
  
 </div>
 
 
-<!-- <app-login-child [userId]="userId">{{userId}}</app-login-child> -->
+<app-login-child [userId]="userId" #childElement (testMessage)="receiveMessage($event)">{{userId}}</app-login-child>

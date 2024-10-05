@@ -1,6 +1,7 @@
-import { Component, OnInit, ɵbypassSanitizationTrustResourceUrl } from '@angular/core';
+import { Component, OnInit, ViewChild, ɵbypassSanitizationTrustResourceUrl } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { of, map } from 'rxjs';
+import { LoginChildComponent } from './login-child/login-child.component';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,12 +9,16 @@ import { of, map } from 'rxjs';
 })
 export class LoginComponent implements OnInit {
   userId: string = '';
+  message:string = ""
+  @ViewChild(LoginChildComponent) childComponent:LoginChildComponent;
 
   ngOnInit(): void {
     console.log('ng on init in login component.');
     of(1, 2, 3).pipe(map((x: any) => console.log('pipe example,', x.x)));
-    this.trythyAndFalsy(5);
+    this.trythyAndFalsy(this.greetme);
     this.promiseExample();
+    console.log("Child component",this.childComponent);
+   
   }
 
   ngOnChanges = () => {
@@ -58,15 +63,22 @@ export class LoginComponent implements OnInit {
   loginFrom: FormGroup;
 
   submitForm = () => {
-    // alert("submit")
-    console.log('userid and password ', this.userid, this.password);
+    // // alert("submit")
+    // console.log('userid and password ', this.userid, this.password);
+    // this.loginFrom.reset();
+    this.childComponent.sayHello();
+    // this.childComponent.
   };
 
   trythyAndFalsy = (x: any) => {
-    if (x) {
-      console.log('truthy and falsy');
-    }
+    x();
   };
+
+  greetme=()=>{
+    console.log("Hello Sanjaya ");
+  }
+
+
       promiseExample=()=>{
         return new Promise((resolve,reject)=>{
           let success =ɵbypassSanitizationTrustResourceUrl;
@@ -86,5 +98,8 @@ export class LoginComponent implements OnInit {
         })
       }
 
-     
+      receiveMessage=(event)=>{
+        this.message=event
+        console.log("output message",event)
+      }
 }
