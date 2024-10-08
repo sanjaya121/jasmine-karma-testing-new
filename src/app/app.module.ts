@@ -12,6 +12,9 @@ import { SamplePipe } from './custom-pipes/sample.pipe';
 import { ResetPaasswordComponent } from './components/authentication/reset-paassword/reset-paassword.component';
 import { SignUpFormComponent } from './components/authentication/sign-up-form/sign-up-form.component';
 import { PostInterceptor } from './interceptors/post-interceptor';
+import { FooterComponent } from './components/common/footer/footer.component';
+import { HederComponent } from './components/common/heder/heder.component';
+import { HotelsAndResortsComponent } from './components/routes/hotels-and-resorts/hotels-and-resorts.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { PostInterceptor } from './interceptors/post-interceptor';
     GridLayoutDirective,
     SamplePipe,
     ResetPaasswordComponent,
-    SignUpFormComponent
+    SignUpFormComponent,
+    FooterComponent,
+    HederComponent,
+    HotelsAndResortsComponent
   ],
   imports: [
     BrowserModule,
