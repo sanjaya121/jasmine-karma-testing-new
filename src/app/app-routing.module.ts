@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { authGuard } from './authgaurds/auth.guard';
-import { ResetPaasswordComponent } from './components/reset-paassword/reset-paassword.component';
+import { ResetPaasswordComponent } from './components/authentication/reset-paassword/reset-paassword.component';
 import { SignUpFormComponent } from './components/authentication/sign-up-form/sign-up-form.component';
 
 const routes: Routes = [

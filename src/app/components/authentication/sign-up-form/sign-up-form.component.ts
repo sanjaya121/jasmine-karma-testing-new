@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HomeService } from 'src/app/services/home-services/home.service';
-
+import { of, pipe, mergeMap, reduce, map } from 'rxjs';
 @Component({
   selector: 'app-sign-up-form',
   templateUrl: './sign-up-form.component.html',
@@ -9,7 +9,7 @@ import { HomeService } from 'src/app/services/home-services/home.service';
 })
 export class SignUpFormComponent implements OnInit {
   ngOnInit(): void {
-    this.promise();
+    this.rxjsOperatiors();
   }
   createAccount: FormGroup;
   signupFormData: {};
@@ -39,12 +39,13 @@ export class SignUpFormComponent implements OnInit {
     this.postServices.submitData(this.signupFormData).subscribe((data) => {});
   };
 
-  promise = () =>{
-  return new Promise((resolve, reject) => {
-      console.log(
-        'adfadsfasdfasfasdfasdfasdfas',
-        resolve('xxxxxxxxxxxxxxxxxxx')
-      );
-    });
-}
+  //demonstrate rxjs operators.
+  rxjsOperatiors = () => {
+    let obs1$ = of(1, 2, 3);
+    let obs2$ = of(4, 5, 6);
+    let xyz = obs1$.pipe(
+      mergeMap((val1) => obs2$.pipe(map((val2) => val1 + '' + val2)))
+    );
+    xyz.subscribe((val) => console.log(val, 'obervable'));
+  };
 }

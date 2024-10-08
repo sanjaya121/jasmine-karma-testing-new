@@ -9,7 +9,7 @@ import { LoginComponent } from './components/login/login.component';
 import { LoginChildComponent } from './components/login/login-child/login-child.component';
 import { GridLayoutDirective } from './custom-directives/grid-layout.directive';
 import { SamplePipe } from './custom-pipes/sample.pipe';
-import { ResetPaasswordComponent } from './components/reset-paassword/reset-paassword.component';
+import { ResetPaasswordComponent } from './components/authentication/reset-paassword/reset-paassword.component';
 import { SignUpFormComponent } from './components/authentication/sign-up-form/sign-up-form.component';
 import { PostInterceptor } from './interceptors/post-interceptor';
 
