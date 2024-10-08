@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { LoginComponent } from './components/login/login.component';
+import { LoginComponent } from './components/authentication/login/login.component';
 import { authGuard } from './authgaurds/auth.guard';
 import { ResetPaasswordComponent } from './components/authentication/reset-paassword/reset-paassword.component';
 import { SignUpFormComponent } from './components/authentication/sign-up-form/sign-up-form.component';

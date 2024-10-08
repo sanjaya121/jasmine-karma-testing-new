@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output, SimpleChange } from '@angular/core';
-import  {SamplePipe} from '../../../custom-pipes/sample.pipe'
+import  {SamplePipe} from '../../../../custom-pipes/sample.pipe'
 @Component({
   selector: 'app-login-child',
   templateUrl: './login-child.component.html',
