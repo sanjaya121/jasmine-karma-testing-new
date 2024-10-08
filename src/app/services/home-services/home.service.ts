@@ -12,6 +12,9 @@ export class HomeService {
     return this.http.get('https://jsonplaceholder.typicode.com/posts');
   };
 
+  submitData=(data)=>{
+    return this.http.post('https://jsonplaceholder.typicode.com/posts/1', data)
+  }
 
   routeGuard=():boolean =>{
     return true;

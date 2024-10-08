@@ -1,0 +1,53 @@
++
+<div class="sig-up-form" id="sign-up-form">
+  <div class="header-text">
+    <h4>Create Account</h4>
+  </div>
+
+  <div class="form-container">
+    <form [formGroup]="createAccount" (ngSubmit)="submitForm()">
+      <div class="first-name-container mb-3">
+        <input
+          class="name form-control"
+          type="text"
+          formControlName="firstname"
+        />
+        <span *ngIf="firstname.invalid && (firstname.touched || firstname.dirty)" >required</span>
+      </div>
+      <div class="first-name-container mb-3">
+        <input
+          class="name form-control"
+          type="text"
+          formControlName="lastname"
+        />
+        <span *ngIf="lastname.invalid && (lastname.touched || lastname.dirty)" >required</span>
+      </div>
+      <div class="first-name-container mb-3">
+        <input
+          class="name form-control"
+          type="email"
+          formControlName="email"
+        />
+      </div>
+      <div class="first-name-container mb-3">
+        <input
+          class="name form-control"
+          type="password"
+          formControlName="password"
+        />
+      </div>
+      <div class="first-name-container mb-3">
+        <input
+          class="name form-control"
+          type="password"
+          formControlName="confirmpassord"
+        />
+      </div>
+      <div class="first-name-container">
+        <button type="submit" class="btn btn-lg btn-primary">
+          Create Account
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

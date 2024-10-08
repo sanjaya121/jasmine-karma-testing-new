@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule,HTTP_INTERCEPTORS} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
@@ -10,6 +10,8 @@ import { LoginChildComponent } from './components/login/login-child/login-child.
 import { GridLayoutDirective } from './custom-directives/grid-layout.directive';
 import { SamplePipe } from './custom-pipes/sample.pipe';
 import { ResetPaasswordComponent } from './components/reset-paassword/reset-paassword.component';
+import { SignUpFormComponent } from './components/authentication/sign-up-form/sign-up-form.component';
+import { PostInterceptor } from './interceptors/post-interceptor';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { ResetPaasswordComponent } from './components/reset-paassword/reset-paas
     LoginChildComponent,
     GridLayoutDirective,
     SamplePipe,
-    ResetPaasswordComponent
+    ResetPaasswordComponent,
+    SignUpFormComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,13 @@ import { ResetPaasswordComponent } from './components/reset-paassword/reset-paas
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:PostInterceptor,
+      multi:true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
