@@ -39,11 +39,7 @@ import { HotelsAndResortsComponent } from './components/routes/hotels-and-resort
     ReactiveFormsModule
   ],
   providers: [
-    {
-      provide:HTTP_INTERCEPTORS,
-      useClass:PostInterceptor,
-      multi:true
-    }
+   
   ],
   bootstrap: [AppComponent]
 })
