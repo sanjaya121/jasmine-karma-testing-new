@@ -1,0 +1,21 @@
+:host .hotels-and-resorts{
+    width: 300px;   
+    height: 600px;
+    border: 1px solid red;
+    margin: 10px;
+}
+
+@media screen and (min-width: 500px ) and (max-width:900px){
+    .hotels-and-resorts{
+        background-color: red;
+    }
+    }
+
+
+    @media print and (max-width:900px){
+        .hotels-and-resorts{
+            background-color: red;
+        }
+        }
+   
+    

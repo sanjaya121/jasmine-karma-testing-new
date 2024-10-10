@@ -2,23 +2,21 @@
   <form [formGroup]="loginFrom" (ngSubmit)="submitForm()">
     <div class="textbox-container">
       <input class="userid" formControlName="userid"/>
-      <span *ngIf="userid.invalid &&(userid.touched || userid.dirty)"> user id is required</span>
+      <span *ngIf="userid.invalid &&(userid.touched || userid.dirty)" class="error-message"> user id is required</span>
     </div>
     <div class="textbox-container">
       <input class="password" formControlName="password" />
-      <span *ngIf="password.invalid &&(password.touched || password.dirty)"> user id is required</span>
+      <span *ngIf="password.invalid &&(password.touched || password.dirty)" class="error-message"> user id is required</span>
     </div>
     <div class="button-container">
-      <button class="submit-button" type="submit">Button</button>
+      <button class="submit-button" type="submit">Login</button>
+    </div>
+    <div class="forgot-password-singup">
+      <span class="forgot-password"><a routerLink="/forgot-password">Forgot password</a> </span>
+      <span class="create-account"><a routerLink="/signup">Create Account</a></span>
     </div>
   </form>
-
-    <a routerLink="/signup">Create Account</a>
-
-{{message}}
-
- 
 </div>
 
 
-<app-login-child [userId]="userId" #childElement (testMessage)="receiveMessage($event)">{{userId}}</app-login-child>
+<!-- <app-login-child [sanjaya]="userId"  (testMessage)="receiveMessage($event)">{{userId}}</app-login-child> -->

@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ɵbypassSanitizationTrustResourceUrl } fr
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { of, map } from 'rxjs';
 import { LoginChildComponent } from './login-child/login-child.component';
+import { LoingService } from 'src/app/services/login/loing.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -26,31 +27,31 @@ export class LoginComponent implements OnInit {
   };
   // Respond after Angular projects external content into the component's view, or into the view that a directive is in.
   // See details and example in
-  ngAfterContentInit() {
-    console.log('ngAfterContentInit');
-  }
+  // ngAfterContentInit() {
+  //   console.log('ngAfterContentInit');
+  // }
 
-  ngAfterViewInit = () => {
-    console.log('ngAfterViewInit');
-  };
+  // ngAfterViewInit = () => {
+  //   console.log('ngAfterViewInit');
+  // };
 
-  ngAfterViewChecked() {
-    console.log('ngAfterViewChecked()');
-  }
+  // ngAfterViewChecked() {
+  //   console.log('ngAfterViewChecked()');
+  // }
 
-  ngDoCheck = () => {
-    console.log('Ng Do Changes');
-  };
+  // ngDoCheck = () => {
+  //   console.log('Ng Do Changes');
+  // };
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,private loginService:LoingService) {
     this.loginFrom = this.fb.group({
       userid: ['', Validators.required],
       password: ['', [Validators.required]],
     });
 
     this.loginFrom.valueChanges.subscribe((data) => {
-      this.userId = data.userid;
-      console.log('Form Data from parent component', data.userid);
+      this.userId = data;
+      console.log('Form Data form', data.userid);
     });
   }
   get userid() {
@@ -63,11 +64,7 @@ export class LoginComponent implements OnInit {
   loginFrom: FormGroup;
 
   submitForm = () => {
-    // // alert("submit")
-    // console.log('userid and password ', this.userid, this.password);
-    // this.loginFrom.reset();
-    this.childComponent.sayHello();
-    // this.childComponent.
+    this.loginService.login(this.userId);
   };
 
   trythyAndFalsy = (x: any) => {

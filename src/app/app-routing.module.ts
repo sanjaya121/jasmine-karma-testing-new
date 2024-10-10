@@ -7,6 +7,7 @@ import { authGuard } from './authgaurds/auth.guard';
 import { ResetPaasswordComponent } from './components/authentication/reset-paassword/reset-paassword.component';
 import { SignUpFormComponent } from './components/authentication/sign-up-form/sign-up-form.component';
 import { HotelsAndResortsComponent } from './components/routes/hotels-and-resorts/hotels-and-resorts.component';
+import { ForgotPasswordComponent } from './components/authentication/forgot-password/forgot-password.component';
 
 const routes: Routes = [
   {
@@ -24,6 +25,9 @@ const routes: Routes = [
   },
   {
     path:'hotels-and-resorts',component:HotelsAndResortsComponent
+  },
+  {
+    path:'forgot-password',component:ForgotPasswordComponent
   }
 ];
 

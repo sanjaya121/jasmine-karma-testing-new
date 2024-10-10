@@ -15,6 +15,9 @@ import { PostInterceptor } from './interceptors/post-interceptor';
 import { FooterComponent } from './components/common/footer/footer.component';
 import { HederComponent } from './components/common/heder/heder.component';
 import { HotelsAndResortsComponent } from './components/routes/hotels-and-resorts/hotels-and-resorts.component';
+import { HomeService } from './services/home-services/home.service';
+import { ForgotPasswordComponent } from './components/authentication/forgot-password/forgot-password.component';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +31,9 @@ import { HotelsAndResortsComponent } from './components/routes/hotels-and-resort
     SignUpFormComponent,
     FooterComponent,
     HederComponent,
-    HotelsAndResortsComponent
+    HotelsAndResortsComponent,
+    ForgotPasswordComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -39,7 +44,7 @@ import { HotelsAndResortsComponent } from './components/routes/hotels-and-resort
     ReactiveFormsModule
   ],
   providers: [
-   
+   HomeService
   ],
   bootstrap: [AppComponent]
 })

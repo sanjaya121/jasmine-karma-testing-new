@@ -10,6 +10,7 @@ import { of, pipe, mergeMap, reduce, map } from 'rxjs';
 export class SignUpFormComponent implements OnInit {
   ngOnInit(): void {
     this.rxjsOperatiors();
+    this.findMissingNumber(this.arr);
   }
   createAccount: FormGroup;
   signupFormData: {};
@@ -47,5 +48,13 @@ export class SignUpFormComponent implements OnInit {
       mergeMap((val1) => obs2$.pipe(map((val2) => val1 + '' + val2)))
     );
     xyz.subscribe((val) => console.log(val, 'obervable'));
+  };
+
+  ///missing number
+  arr = [1,3,4,5,7,8,9,10,11,12,13,14]
+  findMissingNumber = (array) => {
+    let result = Math.floor((array.length + 1) * (array.length + 2) / 2);
+    for (let i = 0; i < array.length; i++) result -= array[i];
+    console.log('result :>> ', result);
   };
 }

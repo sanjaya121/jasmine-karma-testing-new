@@ -1,33 +1,43 @@
-:host .login-component{
-border: 5px solid;
-    position: relative;
-    top: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .textbox-container{
-        margin: 10px 0;
+:host .login-component {
+  position: relative;
+  top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .textbox-container {
+    .error-message {
+      color: red;
     }
-    .userid,.password{
-        height: 30px;
-        border: 1px solid #ccc;
-        border-radius: 3px;
+    .userid,
+    .password {
+      height: 50px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      margin: 10px 0;
+      width: 250px;
     }
-    .button-container{
-        .submit-button{
-            height: 50px;
-            width: 100%;
-            background-color: rgb(175, 135, 135)
-        }
+  }
+  .button-container {
+    .submit-button {
+      height: 50px;
+      width: 100%;
+      background-color: rgb(175, 135, 135);
     }
+  }
+
+  .forgot-password-singup{
+    .forgot-password,.create-account{
+        margin:0 5px;
+        font-size: 14px;
+    }
+  }
 }
 
 //medi query
 
-@media screen and (max-width : 480px){
-    .login-component{
-        background-color: red;
-        border: 50px solid;
-    }
-   
+@media screen and (max-width: 480px) {
+  .login-component {
+    background-color: red;
+    border: 50px solid;
+  }
 }
