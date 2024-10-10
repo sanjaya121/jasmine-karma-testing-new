@@ -17,6 +17,8 @@ import { HederComponent } from './components/common/heder/heder.component';
 import { HotelsAndResortsComponent } from './components/routes/hotels-and-resorts/hotels-and-resorts.component';
 import { HomeService } from './services/home-services/home.service';
 import { ForgotPasswordComponent } from './components/authentication/forgot-password/forgot-password.component';
+import { ResortsComponent } from './components/routes/hotels-and-resorts/resorts/resorts.component';
+import { RestaurantsComponent } from './components/routes/hotels-and-resorts/restaurants/restaurants.component';
 
 
 @NgModule({
@@ -33,6 +35,8 @@ import { ForgotPasswordComponent } from './components/authentication/forgot-pass
     HederComponent,
     HotelsAndResortsComponent,
     ForgotPasswordComponent,
+    ResortsComponent,
+    RestaurantsComponent,
     
   ],
   imports: [

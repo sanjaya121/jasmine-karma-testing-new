@@ -1,21 +1,36 @@
-:host .hotels-and-resorts{
-    width: 300px;   
-    height: 600px;
+
+
+
+
+
+ .hotels-and-resorts {
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  .resorts {
+    width: 50%;
+    border: 1px solid green;
+    margin: 10px;
+  }
+  .restaurants {
+    width: 50%;
     border: 1px solid red;
     margin: 10px;
+  }
 }
 
-@media screen and (min-width: 500px ) and (max-width:900px){
-    .hotels-and-resorts{
-        background-color: red;
-    }
-    }
+@media screen and (max-width: 500px)  {
+    .hotels-and-resorts {
+        flex-direction: column;
+      .resorts{
+          width: 100%;
+      }
+      .restaurants{
+        width: 100%;
+      }
 
+    }
+  }
 
-    @media print and (max-width:900px){
-        .hotels-and-resorts{
-            background-color: red;
-        }
-        }
-   
-    
