@@ -1,23 +1,34 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HotelAndResortsService } from 'src/app/services/hotels-and-resorts/hotel-and-resorts.service';
 import { LoingService } from 'src/app/services/login/loing.service';
 
 @Component({
   selector: 'app-resorts',
   templateUrl: './resorts.component.html',
-  styleUrls: ['./resorts.component.scss']
+  styleUrls: ['./resorts.component.scss'],
 })
 export class ResortsComponent {
   /**
    *
    */
-  constructor(private hotelServices  : HotelAndResortsService) {
-  
-    
+
+  restauranForm: FormGroup;
+  formData;
+  constructor(
+    private hotelServices: HotelAndResortsService,
+    private fb: FormBuilder
+  ) {
+    this.restauranForm = this.fb.group({
+      restaurantname: ['', Validators.required],
+    });
+    this.restauranForm.valueChanges.subscribe((formData) => {
+      this.formData = formData;
+      console.log(formData);
+    });
   }
 
-  sendMessage =()=>{
-    this.hotelServices.sendMessage.next("hello Sanjaya ");
-  }
-
+  sendMessage = () => {
+    this.hotelServices.sendMessage.next(this.formData.restaurantname);
+  };
 }

@@ -1,5 +1,6 @@
-@mixin testWidth{
-    width:50%;;
+@mixin testWidth {
+  width: 50%;
+  height: 600px;
 }
 
 .hotels-and-resorts {
@@ -10,39 +11,27 @@
   justify-content: center;
 
   .resorts {
-    @include testWidth();
+    width: 50%;
     border: 1px solid green;
+    padding: 50px;
     margin: 10px;
-    border-radius: 50px;
   }
-
-  // @keyframes example {
-  //   0%   {background-color: red;}
-  //   25%  {background-color: yellow;}
-  //   50%  {background-color: blue;}
-  //   100% {background-color: green;}
-  // }
-  
   .restaurants {
     width: 50%;
     border: 1px solid red;
     margin: 10px;
-    @include testWidth();
-    // flex-grow: 8;
-    transition:ease-out;
-    animation: example;
-    animation-duration: 60s;
+    padding: 50px;
   }
 }
 
-@media screen and (max-width: 500px) {
-  .hotels-and-resorts {
-    flex-direction: column;
-    .resorts {
-      width: 100%;
-    }
-    .restaurants {
-      width: 100%;
-    }
-  }
-}
+// @media screen and (max-width: 500px) {
+//   .hotels-and-resorts {
+//     flex-direction: column;
+//     .resorts {
+//       width: 100%;
+//     }
+//     .restaurants {
+//       width: 100%;
+//     }
+//   }
+// }

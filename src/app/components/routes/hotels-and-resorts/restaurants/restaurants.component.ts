@@ -14,8 +14,10 @@ export class RestaurantsComponent implements OnInit {
   constructor(private hotelService: HotelAndResortsService) {}
   receivedMessages = '';
   messageFromSiblings="";
+  listOfRestaurants:any;
   ngOnInit() {
     this.receiveMessage();
+    this.getRestaurants();
   }
 
   ngOnChanges(){
@@ -32,5 +34,9 @@ export class RestaurantsComponent implements OnInit {
     });
   };
 
-
+  getRestaurants=()=>{
+    this.hotelService.getRestaurants().subscribe(res=>{
+      this.listOfRestaurants=res;
+    })
+  }
 }

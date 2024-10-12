@@ -1,5 +1,12 @@
 <div class="resorts-component">
-    <span>Test Subject</span>
-  
-    <button class="btn btn-lg btn-primary" (click)="sendMessage()">Send Message</button>
+  <h6>Enter Restaurant</h6>
+  <form [formGroup]="restauranForm">
+    <input
+      class="form-control restaurant-name"
+      formControlName="restaurantname"
+    />
+  </form>
+  <button class="btn btn-lg btn-primary" (click)="sendMessage()">
+    Send Message
+  </button>
 </div>

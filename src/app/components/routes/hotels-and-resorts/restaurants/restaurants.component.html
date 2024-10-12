@@ -1,3 +1,15 @@
-<p>restaurants works!</p>
-
-{{messageFromSiblings}}
+<div class="restaurants">
+  <!-- <span>You Entered {{messageFromSiblings}}</span>
+     -->
+  <div
+    class="list-of-restaurants"
+    *ngFor="let res of listOfRestaurants; let i = index"
+  >
+    <ol>
+      <div class="name-of-restaurant">
+        {{ i + 1 }}&nbsp;&nbsp;{{ res.title }}
+      </div>
+      <div class="image-of-restaurant"><img [src]="res.thumbnailUrl" /></div>
+    </ol>
+  </div>
+</div>

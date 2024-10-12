@@ -24,4 +24,8 @@ export class HotelAndResortsService {
   sendMessages = () => {
     this.sendMessage.next(this.messages);
   };
+
+  getRestaurants=()=>{
+    return this.http.get('https://jsonplaceholder.typicode.com/albums/1/photos');
+  }
 }
