@@ -1,36 +1,48 @@
+@mixin testWidth{
+    width:50%;;
+}
 
-
-
-
-
- .hotels-and-resorts {
+.hotels-and-resorts {
   margin: 10px;
   display: flex;
   align-items: center;
   align-content: center;
   justify-content: center;
+
   .resorts {
-    width: 50%;
+    @include testWidth();
     border: 1px solid green;
     margin: 10px;
+    border-radius: 50px;
   }
+
+  // @keyframes example {
+  //   0%   {background-color: red;}
+  //   25%  {background-color: yellow;}
+  //   50%  {background-color: blue;}
+  //   100% {background-color: green;}
+  // }
+  
   .restaurants {
     width: 50%;
     border: 1px solid red;
     margin: 10px;
+    @include testWidth();
+    // flex-grow: 8;
+    transition:ease-out;
+    animation: example;
+    animation-duration: 60s;
   }
 }
 
-@media screen and (max-width: 500px)  {
-    .hotels-and-resorts {
-        flex-direction: column;
-      .resorts{
-          width: 100%;
-      }
-      .restaurants{
-        width: 100%;
-      }
-
+@media screen and (max-width: 500px) {
+  .hotels-and-resorts {
+    flex-direction: column;
+    .resorts {
+      width: 100%;
+    }
+    .restaurants {
+      width: 100%;
     }
   }
-
+}

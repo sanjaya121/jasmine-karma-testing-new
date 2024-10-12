@@ -95,8 +95,7 @@ export class LoginComponent implements OnInit {
         })
       }
 
-      receiveMessage=(event)=>{
-        this.message=event
-        console.log("output message",event)
-      }
+    sendMessage=()=>{
+      // this.loginService.receive("hello from Sanjaya");
+    }
 }
