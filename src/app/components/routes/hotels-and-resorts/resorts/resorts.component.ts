@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HotelAndResortsService } from 'src/app/services/hotels-and-resorts/hotel-and-resorts.service';
 import { LoingService } from 'src/app/services/login/loing.service';
@@ -7,6 +7,7 @@ import { LoingService } from 'src/app/services/login/loing.service';
   selector: 'app-resorts',
   templateUrl: './resorts.component.html',
   styleUrls: ['./resorts.component.scss'],
+  changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class ResortsComponent implements OnInit {
   /**
@@ -15,7 +16,7 @@ export class ResortsComponent implements OnInit {
 
   restauranForm: FormGroup;
   formData;
-  
+
   @Input() messageInput = 'test ';
 
   constructor(
