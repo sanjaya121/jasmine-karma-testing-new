@@ -8,15 +8,13 @@ import { Observable } from 'rxjs';
 export class HomeService {
   constructor(private http: HttpClient) {}
 
-  getData = ():Observable<any> => {
+  getData = (): Observable<any> => {
     return this.http.get('https://jsonplaceholder.typicode.com/posts');
   };
 
-  submitData=(data)=>{
-    return this.http.post('https://jsonplaceholder.typicode.com/posts/1', data)
-  }
+  submitData = (data) => {
+    return this.http.post('https://jsonplaceholder.typicode.com/posts/1', data);
+  };
 
-  routeGuard=():boolean =>{
-    return true;
-  }
+
 }

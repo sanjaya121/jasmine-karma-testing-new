@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { HotelAndResortsService } from 'src/app/services/hotels-and-resorts/hotel-and-resorts.service';
 import { LoingService } from 'src/app/services/login/loing.service';
 
@@ -15,6 +15,7 @@ export class RestaurantsComponent implements OnInit {
   receivedMessages = '';
   messageFromSiblings="";
   listOfRestaurants:any;
+  @Input() messageInput="test "
   ngOnInit() {
     this.receiveMessage();
     this.getRestaurants();

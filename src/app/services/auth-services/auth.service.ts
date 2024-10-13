@@ -7,10 +7,10 @@ export class AuthService {
 
   constructor() { }
 
-  private loggedIn = false; // Simulate login status
+  public loggedIn = false; // Simulate login status
 
   isLoggedIn(): boolean {
-    return this.loggedIn=true; // Return the login status
+    return this.loggedIn=false; // Return the login status
   }
 
   login() {

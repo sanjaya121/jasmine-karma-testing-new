@@ -19,14 +19,15 @@ export class HomeComponent implements OnInit {
     // console.log('object :>> ', counter.increment());
     // console.log("Ng On Init");
     // this.printPyramid(6);
-    this.getPosts();
+    this.getPosts(this.callback);
   }
 
-  getPosts = () => {
+  getPosts = (callback) => {
     this.homeService.getData().subscribe((posts) => {
     
       this.posts = posts;
       console.log('all posts', this.posts);
+      callback();
     });
 
     // // closure example
@@ -90,4 +91,7 @@ export class HomeComponent implements OnInit {
 
     //   ]
   };
+  callback=()=>{
+    alert("get post completed")
+  }
 }
