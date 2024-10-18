@@ -1,0 +1,18 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-product-details',
+  templateUrl: './product-details.component.html',
+  styleUrls: ['./product-details.component.scss']
+})
+export class ProductDetailsComponent implements OnInit {
+
+  ngOnInit(): void {
+    console.log("app-product-details")
+  }
+
+  SaveMe=()=>{
+
+    console.log('product Details Child Component');
+  }
+}

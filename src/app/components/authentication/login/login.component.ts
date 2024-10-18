@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { of, map } from 'rxjs';
 import { LoginChildComponent } from './login-child/login-child.component';
 import { LoingService } from 'src/app/services/login/loing.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -31,9 +32,10 @@ export class LoginComponent implements OnInit {
   //   console.log('ngAfterContentInit');
   // }
 
-  // ngAfterViewInit = () => {
-  //   console.log('ngAfterViewInit');
-  // };
+  ngAfterViewInit = () => {
+    console.log('ngAfterViewInit');
+    console.log("Child component",this.childComponent);
+  };
 
   // ngAfterViewChecked() {
   //   console.log('ngAfterViewChecked()');
