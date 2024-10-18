@@ -28,6 +28,9 @@ const routes: Routes = [
   },
   {
     path:'forgot-password',component:ForgotPasswordComponent
+  },
+  {
+    path:'lazy-loading',loadChildren:()=>import('./components/stand-alone/stand-alone.component').then(m=>m.StandAloneComponent)
   }
 ];
 

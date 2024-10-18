@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class HotelsAndResortsComponent {
 
+  ngAfterViewInit(){
+
+
+    console.log("view ninit in parent")
+  }
+
 }

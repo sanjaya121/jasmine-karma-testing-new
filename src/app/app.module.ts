@@ -19,6 +19,7 @@ import { HomeService } from './services/home-services/home.service';
 import { ForgotPasswordComponent } from './components/authentication/forgot-password/forgot-password.component';
 import { ResortsComponent } from './components/routes/hotels-and-resorts/resorts/resorts.component';
 import { RestaurantsComponent } from './components/routes/hotels-and-resorts/restaurants/restaurants.component';
+import { StandAloneComponent } from './components/stand-alone/stand-alone.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { RestaurantsComponent } from './components/routes/hotels-and-resorts/res
     ForgotPasswordComponent,
     ResortsComponent,
     RestaurantsComponent,
+    StandAloneComponent,
     
   ],
   imports: [
