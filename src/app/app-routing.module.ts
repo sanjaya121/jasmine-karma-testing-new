@@ -30,7 +30,7 @@ const routes: Routes = [
     path:'forgot-password',component:ForgotPasswordComponent
   },
   {
-    path:'lazy-loading',loadChildren:()=>import('./components/stand-alone/stand-alone.component').then(m=>m.StandAloneComponent)
+    path:'products',loadChildren:()=>import('./components/products/products.module').then(m=>m.ProductsModule)
   }
 ];
 
