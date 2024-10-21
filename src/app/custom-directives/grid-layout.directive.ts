@@ -1,10 +1,12 @@
-import { Directive } from '@angular/core';
+import { Directive, ElementRef } from '@angular/core';
 
 @Directive({
-  selector: '[table-grid-layout]'
+  selector: '[table-grid]'
 })
 export class GridLayoutDirective {
 
-  constructor() { }
-
+  constructor(element:ElementRef) {
+    
+    element.nativeElement.style.backgroundColor="red";
+}
 }

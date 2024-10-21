@@ -1,1 +1,10 @@
-<p>product-details works!</p>
+<h1>Products Detail page</h1>
+
+{{inputChild}}
+{{ngTemplate}}
+<ng-content></ng-content>
+
+<div *ngIf="true else elseBlock">
+    <p>Ng template </p>
+</div>
+<ng-template #elseBlock><p>Else Block</p></ng-template>

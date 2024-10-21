@@ -22,13 +22,13 @@ import { RestaurantsComponent } from './components/routes/hotels-and-resorts/res
 import { StandAloneComponent } from './components/stand-alone/stand-alone.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
     LoginChildComponent,
-    GridLayoutDirective,
     SamplePipe,
     ResetPaasswordComponent,
     SignUpFormComponent,
@@ -40,12 +40,12 @@ import { StandAloneComponent } from './components/stand-alone/stand-alone.compon
     RestaurantsComponent,
     StandAloneComponent,
     
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
     FormsModule,
     ReactiveFormsModule
   ],
