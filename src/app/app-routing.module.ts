@@ -31,6 +31,9 @@ const routes: Routes = [
   },
   {
     path:'products',loadChildren:()=>import('./components/products/products.module').then(m=>m.ProductsModule)
+  },
+  {
+    path:'electronics',loadChildren:()=>import('./components/department/department.module').then(m=>m.DepartmentModule)
   }
 ];
 
