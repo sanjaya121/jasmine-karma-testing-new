@@ -1,6 +1,10 @@
 <div class="products-page container" id="products-page">
-  <h6>Products page</h6>
- 
-  <app-product-details [inputChild]="inputMessage"><p>HEllo world</p></app-product-details>
+  <h4>Products page</h4>
+  <div class="products" >
+    <app-product-details *ngFor="let p of products">
+      <div class="id">{{p.id}}</div>
+      <div class="brand">{{p.brand}}</div>
+    </app-product-details>
+  </div>
 </div>
 

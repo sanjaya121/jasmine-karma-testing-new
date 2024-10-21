@@ -38,9 +38,10 @@ export class ProductsComponent implements OnInit {
     // console.log('object114 :>> ', +'1' + '1' + '2');
     // console.log('type of ', typeof '2' + '2');
     // this.observables();
-    // this.getProducts();
+    this.getProducts();
     // this.promiseExample();
     // this.objectDestructuring();
+
   }
 
   ngAfterViewInit() {
@@ -102,7 +103,7 @@ export class ProductsComponent implements OnInit {
     console.log('spread:>> ', { ...person, age: '40' });
   };
 
-  changeInput(){
-    this.inputMessage="Hello Sanjaya";
+  changeInput(input: HTMLInputElement){
+    console.log(input)
   }
 }
