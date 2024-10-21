@@ -1,1 +1,7 @@
-<p>electronics works!</p>
+<div class="electronics-department">
+  <h1>Electronics</h1>
+  <form [formGroup]="electronicsForm">
+    <input type="text" formControlName="name" />
+  </form>
+</div>
+<app-phones [name]="name"></app-phones>
